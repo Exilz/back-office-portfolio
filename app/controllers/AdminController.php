@@ -2,6 +2,7 @@
 
 class AdminController extends \BaseController {
 
+
 	public function index()
 	{
 		$projects = Project::all();
@@ -19,6 +20,9 @@ class AdminController extends \BaseController {
 		Return Redirect::to('/');
 	}
 
+	/**
+	 * Action de connexion au back-office
+	 */
 	public function authenticate()
 	{
 		$username = Request::input()['username'];
@@ -38,12 +42,20 @@ class AdminController extends \BaseController {
 		}
 	}
 
+	/**
+	 * Editer un projet
+	 * @param  int $id id du projet
+	 */
 	public function edit($id)
 	{
 		$project = Project::find($id);
 		return View::make('private.edit')->with('project', $project);
 	}
 
+	/**
+	 * Action d'édition d'un projet
+	 * @param  int $id id du projet
+	 */
 	public function update($id)
 	{
 		$request = Request::all();
@@ -62,6 +74,9 @@ class AdminController extends \BaseController {
 		return View::make('private.add');
 	}
 
+	/**
+	 * Action de stockage d'un nouveau projet
+	 */
 	public function store()
 	{
 		$request = Request::input();
@@ -75,6 +90,10 @@ class AdminController extends \BaseController {
 		return Redirect::to('/admin/' . $project->id);
 	}
 
+	/**
+	 * Action de suppression d'un projet
+	 * @param  int $id ID du projet
+	 */
 	public function destroy($id)
 	{
 		$project = Project::find($id);

@@ -6,7 +6,7 @@
 
 <div class="row">
 	
-	{{Form::open(["class", "large-8 columns"])}}
+	{{Form::open(["class" => "large-12 columns", "files" => true])}}
 
 		{{Form::label('Titre')}}
 		{{Form::text('title')}}
@@ -18,7 +18,7 @@
 		{{Form::textarea('desc')}}
 
 		{{Form::label('Logo')}}
-		{{Form::text('logo')}}
+		{{Form::file('logo')}}
 
 		{{Form::label('Lien')}}
 		{{Form::text('link')}}

@@ -48,8 +48,10 @@ class AdminController extends \BaseController {
 	 */
 	public function edit($id)
 	{
+		// ProjectImage::where('project-id', '=', 1)->firstOrFail();
 		$project = Project::find($id);
-		return View::make('private.edit')->with('project', $project);
+		$projectImages = ProjectImage::where('projectId', '=', $id)->get();
+		return View::make('private.edit')->with('project', $project)->with('projectImages', $projectImages);
 	}
 
 	/**
@@ -60,8 +62,23 @@ class AdminController extends \BaseController {
 	{
 		$request = Request::all();
 		$project = Project::find($id);
+		$logoFile = Input::file('logo');
 
-		$project->fill($request)->save();
+			/* Remplir la base de données avec les nouvelles valeurs */
+		$project->title = $request['title'];
+		$project->subtitle = $request['subtitle'];
+		$project->desc = $request['desc'];
+		$project->link = $request['link'];
+
+			/* Remplir la BDD avec le nouveau logo si il a été changé */
+		if(isset($logoFile)){
+			$logoPath = public_path() . '\img';
+			$logoName = $project->id . '_tb.' . $logoFile->guessClientExtension();
+			$logoFile->move($logoPath, $logoName);
+			$project->logo = $logoName;
+		}
+		
+		$project->save();
 
 		Session::flash('flash_msg', "Projet " . $project->title . " modifié avec succès.");
 		Session::flash('flash_type', "success");		
@@ -81,8 +98,23 @@ class AdminController extends \BaseController {
 	{
 		$request = Request::input();
 		$project = new Project;
+		$logoFile = Input::file('logo');
 
-		$project->fill($request)->save();
+			/* Remplir la base de données avec les nouvelles valeurs */
+		$project->title = $request['title'];
+		$project->subtitle = $request['subtitle'];
+		$project->desc = $request['desc'];
+		$project->link = $request['link'];
+
+			/* Remplir la BDD avec le nouveau logo si il a été changé */
+		if(isset($logoFile)){
+			$logoPath = public_path() . '\img';
+			$logoName = $project->id . '_tb.' . $logoFile->guessClientExtension();
+			$logoFile->move($logoPath, $logoName);
+			$project->logo = $logoName;
+		}
+		
+		$project->save();
 
 		Session::flash('flash_msg', "Projet " . $project->title . " ajouté avec succès.");
 		Session::flash('flash_type', "success");	
@@ -104,6 +136,57 @@ class AdminController extends \BaseController {
 
 		return Redirect::to('/admin');	
 
+	}
+
+	public function uploadImages()
+	{
+		$projectImage = new ProjectImage;
+		$project = Project::find(Request::get('id'));
+
+
+		$file = Input::file('file');
+		$fileName = $project->id . '_' . $file->getClientOriginalName();
+		$filePath = public_path() . '/img/projectsImages/';
+
+		$file->move($filePath, $fileName);
+
+		$projectImage->src = $fileName;
+		$projectImage->caption = "Caption de l'image";
+		$projectImage->alt = "Attribut alt de l'image";
+		$projectImage->projectId = $project->id;
+		$projectImage->save();
+	}
+
+	public function destroyImage($id)
+	{
+		$file = public_path() . '/img/projectsImages/' . ProjectImage::find($id)->src;
+		$fileName = ProjectImage::find($id)->src;
+
+		if(is_file($file))
+		{	
+			unlink($file);
+		}
+
+		ProjectImage::destroy($id);
+
+		Session::flash('flash_msg', "'$fileName' supprimé avec succès.");
+		Session::flash('flash_type', "warning");	
+
+		return Redirect::to(URL::previous());
+
+	}
+
+	public function updateImage($id)
+	{
+		$image = ProjectImage::find($id);
+		$request = Request::all();
+
+		$image->fill($request)->save();
+
+		Session::flash('flash_msg', "Attributs de l'image modifiés avec succès.");
+		Session::flash('flash_type', "success");		
+		
+		return Redirect::to(URL::previous());
 	}
 
 

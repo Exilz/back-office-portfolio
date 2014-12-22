@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/dropzone_basic.css">
+    <link rel="stylesheet" href="../css/dropzone.css">
     <script src="../js/vendor/modernizr.js"></script>
   </head>
   <body>
@@ -58,9 +60,9 @@
 
     <script src="../js/vendor/jquery.min.js"></script>
     <script src="../js/foundation.min.js"></script>
-    <script src="../js/lib.js"></script>
-    <script src="../js/app.js"></script>
-    <script src="../js/folio.js"></script>
+    <script src="../js/ckeditor/ckeditor.js"></script>
+    <script src="../js/dropzone.js"></script>
+    <script src="../js/backend.js"></script>
     <script>
       $(document).foundation();
     </script>

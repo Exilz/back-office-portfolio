@@ -6,9 +6,9 @@
 <p class="right"><a href="/admin/add" class="button">Ajouter</a></p>
 
 <div class="row">
-	<ul>
+	<ul id="bo-project-list">
 	@foreach($projects as $project)
-		<li><a href="/admin/{{$project->id}}">{{$project->title}}</a></li>
+		<li><img src="../img/{{$project->logo}}" class="bo-project-logo"><a href="/admin/{{$project->id}}">{{$project->title}}</a></li>
 	@endforeach
 	</ul>	
 </div>

@@ -1,0 +1,261 @@
+{
+        "nb_items" : 10,
+        "0" : {
+            "title" : "Doge Online",
+            "subtitle" : "Wordpress",
+            "desc" : "<p>Développement d'un site sous wordpress pour un cours à l'IUT d'Arles. Consigne imposée : Créer un site responsive sous CMS <strong>(Wordpress ou Joomla)</strong> en ~4h.</p><p>Travail par groupe de 4 avec réalisation d'un cahier des charges.</p>",
+            "logo" : "img/0_tb.jpg",
+            "link" : "",
+            "video" : 0,
+            "images" : {
+                "1" : {
+                    "src" : "img/projects/3/1.jpg",
+                    "caption" : "Accueil du site et slider",
+                    "alt" : "Doge Online"
+                },
+                "2" : {
+                    "src" : "img/projects/3/2.jpg",
+                    "caption" : "Exemple mise en page article",
+                    "alt" : "Doge Online"
+                },
+                "3" : {
+                    "src" : "img/projects/3/3.jpg",
+                    "caption" : "Gallerie photo",
+                    "alt" : "Doge online"
+                }
+            }
+        },
+        "1" : {
+            "title" : "Cuberunner",
+            "subtitle" : "Jeu vidéo, Android, C#",
+            "desc" : "<p>Projet personnel de<strong>jeu smartphone</strong> (Android). Cuberunner est un jeu d'arcade où vous devez esquiver des blocs générés de façon procédurale.</p><p>Le jeu est codé en C# sous le logiciel Unity3D. (Peut-être) un jour sur le google Play Store :)</p>",
+            "logo" : "img/1_tb.jpg",
+            "link" : "",
+            "video" : 0,
+            "images" : {
+                "1" : {
+                    "src" : "img/projects/7/1.png",
+                    "caption" : "Accueil du jeu",
+                    "alt" : "Cuberunner"
+                },
+                "2" : {
+                    "src" : "img/projects/7/2.jpg",
+                    "caption" : "Partie en jeu",
+                    "alt" : "Cuberunner"
+                },
+                "3" : {
+                    "src" : "img/projects/7/3.jpg",
+                    "caption" : "Ecran de fin",
+                    "alt" : "Cuberunner"
+                }
+            }
+        },
+        "2" : {
+            "title" : "Aides et Services",
+            "subtitle" : "Mockups / Maquettes et webdesign",
+            "desc" : "<p>Maquette pour l'entreprise Aide et Services réalisée durant mon stage de première année.<p><p>Trois versions successives ont été créées pour obtenir un résultat convenant au client.</p>",
+            "logo" : "img/2_tb.jpg",
+            "link" : "",
+            "video" : 0,
+            "images" : {
+                "1" : {
+                    "src" : "img/projects/6/1.jpg",
+                    "caption" : "Aide et Services",
+                    "alt" : "Aide et Servics"
+                },
+                "2" : {
+                    "src" : "img/projects/6/2.jpg",
+                    "caption" : "Catégories",
+                    "alt" : "Aide et Services"
+                }
+            }
+        },
+        "3" : {
+            "title" : "Gravies cimes",
+            "subtitle" : "Développement PHP",
+            "desc" : "<p>Dans le cadre de ma seconde année en DUT SRC (Services et Réseaux de Communication) à Arles, j'ai du réaliser un<strong> projet tutoré</strong> sur une durée de 4 mois.</p><p>J'ai réalisé le <strong>développement complet</strong> d'un site internet (front et back office). Le back-office est complet et développé en PHP. Celui-ci se veut le plus intuitif possible. Ce travail m'a permis d'approfondir grandement mes compétences en PHP tout en me faisant aborder des technologies que je n'utilisais pas ou peu. Le site est entièrement <strong>responsive</strong>.</p>",
+            "logo" : "img/3_tb.jpg",
+            "link" : "http://graviescimes.olympe.in",
+            "video" : 0,
+            "images" : {
+                "1" : {
+                    "src" : "img/projects/1/1.jpg",
+                    "caption" : "Association d'escalade à Arles",
+                    "alt" : "Gravies Cimes"
+                },
+                "2" : {
+                    "src" : "img/projects/1/2.jpg",
+                    "caption" : "Back-office complet développé en PHP",
+                    "alt" : "Gravies Cimes"
+                },
+                "3" : {
+                    "src" : "img/projects/1/3.jpg",
+                    "caption" : "Création de sorties via le back-office",
+                    "alt" : "Gravies Cimes"
+                }
+            }
+        },
+        "4" : {
+            "title" : "AbsolutkiteBoarding Shop",
+            "subtitle" : "E-commerce, Prestashop",
+            "desc" : "<p>Durant mon stage de deuxième année de DUT SRC (Services et Réseaux de Communication), j'ai eu pour mission de développer un site d'<strong>e-commerce</strong> pour AbsolutKiteboarding, un magasin de Kitesurf.</p><p>Le site est réalisé sous <strong>Prestashop</strong>, j'ai du y ajouter de nombreux modules développés spécialement pour les besoins de mon maître de stage tels qu'un widget météo ou des onglets de navigation...</p>",
+            "logo" : "img/4_tb.jpg",
+            "link" : "http://absolutkiteboarding.fr/shop",
+            "video" : 0,
+            "images" : {
+                "1" : {
+                    "src" : "img/projects/2/1.jpg",
+                    "caption" : "Accueil du site d'e-commerce",
+                    "alt" : "AbsolutKiteboarding"
+                },
+                "2" : {
+                    "src" : "img/projects/2/2.jpg",
+                    "caption" : "Page produit",
+                    "alt" : "AbsolutKiteboarding"
+                },
+                "3" : {
+                    "src" : "img/projects/2/3.jpg",
+                    "caption" : "Page produit avec options",
+                    "alt" : "AbsolutKiteboarding"
+                }
+            }
+        },
+        "5" : {
+            "title" : "IUT Shop",
+            "subtitle" : "Développement PHP",
+            "desc" : "<p>Projet PHP DUT SRC. Réalisation d'une boutique en Programmation Objet avec pour caractéristiques : traduction i18n (en/fr) avec conversion des devises, panier, catalogue et documentation complète.</p><p>L'utilisation d'un moteur de template était imposée par notre professeur.<p>",
+            "logo" : "img/5_tb.jpg",
+            "link" : "",
+            "video" : 0,
+            "images" : {
+                "1" : {
+                    "src" : "img/projects/4/1.jpg",
+                    "caption" : "Panier",
+                    "alt" : "IUT Shop"
+                },
+                "2" : {
+                    "src" : "img/projects/4/2.jpg",
+                    "caption" : "Panier anglais",
+                    "alt" : "IUT Shop"
+                },
+                "3" : {
+                    "src" : "img/projects/4/3.jpg",
+                    "caption" : "Catalogue",
+                    "alt" : "IUT Shop"
+                }
+            }
+        }, 
+    	"6" : {
+		"title" : "BlogWebdev.fr",
+		"subtitle" : "Site personnel actualités développement web",
+		"desc" : "<p>Projet personnel de réalisation d'un blog présentant l'actualité du développement et design web, du référencement naturel... Ce blog est tenu uniquement par moi-même. J'utilise le Framework Hexo qui me permet de générer des pages HTML statiques. Ainsi, les pages du blog sont les plus légères possibles. C'est l'occasion pour moi d'améliorer mes compétences en référencement. J'ai pour objectif d'apparaître dans la première page des résultats Google d'ici 6 mois sur des mots-clés tels que Blog, développement, web, actualité, veille technologique... Je m'efforce donc de mettre en oeuvre un maximum de techniques de <strong>SEO</strong> pour y parvenir, malgré le fait que mon nom de domaine soit très récent.</p>",
+		"logo" : "img/6_tb.jpg",
+		"link" : "http://blogwebdev.fr",
+		"video" : 0,
+		"images" : {
+			"1" : {
+				"src" : "img/projects/8/1.jpg",
+				"caption" : "Blogwebdev.fr actualités développement web",
+				"alt" : "Blogwebdev.fr actualités développement web"
+			},
+			"2" : {
+				"src" : "img/projects/8/2.jpg",
+				"caption" : "Article ressources web",
+				"alt" : "Article ressources web"
+			}
+		}
+	}, 
+    	"7" : {
+		"title" : "Restaurants Michelin",
+		"subtitle" : "Application mobile",
+		"desc" : "<p>Création d'une application mobile de recherche de restaurant étoilés avec le framework jQuery mobile. Travail réalisé pour mon année de licence ATC MIW à Gap en Décembre 2014. L'application intègre de nombreuses fonctionnalités de l'API Google Maps V3 comme l'affichage de cartes, le calcul d'itinéraires ou de marqueurs en fonction d'un rayon. L'application sera prochainement compilée avec Apache Cordova pour appareils mobiles Android.</p><p><a href='https://github.com/Exilz/restaurants' target='_blank'>L'intégralité du code source est disponible ici</a>.",
+		"logo" : "img/7_tb.jpg",
+		"link" : "http://maximebertonnier.fr/demos/restaurants",
+		"video" : 0,
+		"images" : {
+			"1" : {
+				"src" : "img/projects/restaurants/1.png",
+				"caption" : "Page d'accueil de l'application",
+				"alt" : "Application recherche restaurants étoiles jQuery Mobile"
+			},
+			"2" : {
+				"src" : "img/projects/restaurants/2.jpg",
+				"caption" : "Extrait de la page fiche d'un restaurant",
+				"alt" : "Application recherche restaurants étoiles jQuery Mobile"
+			},
+			"3" : {
+				"src" : "img/projects/restaurants/3.jpg",
+				"caption" : "Exemple de génération d'itinéraire",
+				"alt" : "Application recherche restaurants étoiles jQuery Mobile"
+			},
+			"4" : {
+				"src" : "img/projects/restaurants/4.jpg",
+				"caption" : "Recherche des restaurants situés autour de soi grâce à un rayon de X mètres",
+				"alt" : "Application recherche restaurants étoiles jQuery Mobile"
+			}
+		}
+	}, 
+    	"8" : {
+		"title" : "Peanuts Portfolio",
+		"subtitle" : "Intégration maquette responsive design",
+		"desc" : "<p>Intégration d'une maquette en HTML5/CSS3 et jQuery. <strong>Travail réalisé en deux heures</strong> pour un cours de développement front-end. Rendu adapté pour desktop (3 colonnes), tablettes (2 colonnes) et mobile (1 colonne).</p>",
+		"logo" : "img/8_tb.jpg",
+		"link" : "http://maximebertonnier.fr/demos/portfolio",
+		"video" : 0,
+		"images" : {
+			"1" : {
+				"src" : "img/projects/peanuts/1.jpg",
+				"caption" : "Rendu version ordinateur",
+				"alt" : "Intégration responsive d'une maquette portfolio pour ordinateurs de bureau, tablettes et smartphones."
+			},
+			"2" : {
+				"src" : "img/projects/peanuts/2.jpg",
+				"caption" : "Rendu version tablette",
+				"alt" : "Intégration responsive d'une maquette portfolio pour ordinateurs de bureau, tablettes et smartphones."
+			},
+			"3" : {
+				"src" : "img/projects/peanuts/3.jpg",
+				"caption" : "Rendu version mobile (avec menu adapté)",
+				"alt" : "Intégration responsive d'une maquette portfolio pour ordinateurs de bureau, tablettes et smartphones."
+			}
+		}
+	}, 
+    	"9" : {
+		"title" : "Maquettes Cerbiotech",
+		"subtitle" : "Maquettes webdesign sous Photoshop",
+		"desc" : "<p>Création de plus d'une dizaine de maquettes pour l'entreprise Cerbiotech. L'enjeu de ce projet était de proposer à cette entreprise un back-office offrant la meilleure expérience utilisateur possible tout en présentant un design moderne et sobre.</p>",
+		"logo" : "img/9_tb.jpg",
+		"link" : "",
+		"video" : 0,
+		"images" : {
+			"1" : {
+				"src" : "img/projects/cerbiotech/1.png",
+				"caption" : "Page d'accueil, panneau de bord",
+				"alt" : "Création de maquettes Photoshop pour l'entreprise Cerbiotech à Gap : back-office"
+			},
+			"2" : {
+				"src" : "img/projects/cerbiotech/2.png",
+				"caption" : "Todo-list, liste des tâches",
+				"alt" : "Création de maquettes Photoshop pour l'entreprise Cerbiotech à Gap : back-office"
+			},
+			"3" : {
+				"src" : "img/projects/cerbiotech/3.png",
+				"caption" : "Gestion de l'inventaire, tableur",
+				"alt" : "Création de maquettes Photoshop pour l'entreprise Cerbiotech à Gap : back-office"
+			},
+			"4" : {
+				"src" : "img/projects/cerbiotech/4.png",
+				"caption" : "Plan de la serre",
+				"alt" : "Création de maquettes Photoshop pour l'entreprise Cerbiotech à Gap : back-office"
+			},
+			"5" : {
+				"src" : "img/projects/cerbiotech/5.png",
+				"caption" : "Page de statistiques",
+				"alt" : "Création de maquettes Photoshop pour l'entreprise Cerbiotech à Gap : back-office"
+			}
+		}
+	}
+    
+
+    
+}

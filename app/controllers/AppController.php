@@ -14,7 +14,8 @@ class AppController extends \BaseController {
 
 	public function portfolio()
 	{
-		Return View::make('public.portfolio');
+		$projects = Project::all();
+		Return View::make('public.portfolio', compact('projects'));
 	}
 
 	public function contact()
@@ -25,6 +26,18 @@ class AppController extends \BaseController {
 	public function mentionsLegales()
 	{
 		Return View::make('public.mentions-legales');
+	}
+
+	/**
+	 * Génère un fichier JSON contenant toutes les informations d'un projet et ses images
+	 * @param  int $id id du projet
+	 */
+	public function projectJson($id)
+	{
+		$project = Project::find($id)->toArray();
+		$projectImages = ["images" => ProjectImage::where('projectId', '=', $id)->get()->toArray()];
+		$result = array_merge($project, $projectImages);
+		return Response::json($result);
 	}
 
 }

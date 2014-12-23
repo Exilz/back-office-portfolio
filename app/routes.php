@@ -8,6 +8,7 @@ Route::get('/about', 'AppController@about');
 Route::get('/portfolio', 'AppController@portfolio');
 Route::get('/contact', 'AppController@contact');
 Route::get('/mentions-legales', 'AppController@mentionsLegales');
+Route::get('/project/{id}', 'AppController@projectJson');
 
 
 

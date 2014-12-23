@@ -138,6 +138,10 @@ class AdminController extends \BaseController {
 
 	}
 
+	/**
+	 * Envoi d'images via le formulaire AJAX Dropzone
+	 * Place les images dans /img/projectsImages/ et stocke les infos dans la table project_images
+	 */
 	public function uploadImages()
 	{
 		$projectImage = new ProjectImage;
@@ -157,6 +161,10 @@ class AdminController extends \BaseController {
 		$projectImage->save();
 	}
 
+	/**
+	 * Supprime une image précédemment envoyée en AJAX
+	 * @param  int $id id de l'image dans la table project_images
+	 */
 	public function destroyImage($id)
 	{
 		$file = public_path() . '/img/projectsImages/' . ProjectImage::find($id)->src;
@@ -176,6 +184,10 @@ class AdminController extends \BaseController {
 
 	}
 
+	/**
+	 * Met à jour le caption et l'attribut alt de l'image d'un projet
+	 * @param  int $id id de l'image dans la table project_images
+	 */
 	public function updateImage($id)
 	{
 		$image = ProjectImage::find($id);

@@ -14,7 +14,7 @@ class AppController extends \BaseController {
 
 	public function portfolio()
 	{
-		$projects = Project::all();
+		$projects = DB::table('projects')->orderBy('position')->get();
 		Return View::make('public.portfolio', compact('projects'));
 	}
 

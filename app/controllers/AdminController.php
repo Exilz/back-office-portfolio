@@ -5,7 +5,7 @@ class AdminController extends \BaseController {
 
 	public function index()
 	{
-		$projects = Project::all();
+		$projects = DB::table('projects')->orderBy('position')->get();
 		Return View::make('private.index')->with('projects', $projects);
 	}
 
@@ -70,6 +70,32 @@ class AdminController extends \BaseController {
 		$project->desc = $request['desc'];
 		$project->link = $request['link'];
 
+		$maxPosition = Project::max('position'); // Position maximale du projet dans la table
+		$currentPosition = $project->position; // Position actuelle du projet qu'on modifie
+		$newPosition = $request['position']; // Position entrée dans le champ number('position')
+
+		// Si on tente de changer la position du projet
+		if($currentPosition != $newPosition)
+		{
+			// Si la position est < 1 ou si elle est trop elevée, erreur
+			if($newPosition < 1 || $newPosition > $maxPosition)
+			{
+				Session::flash('flash_msg', "Impossible de définir cette position pour le projet.");
+				Session::flash('flash_type', "alert");
+				return Redirect::to('/admin/' . $id);
+			}
+			// Sinon on inverse la position des deux projets
+			else
+			{
+				// Selection de l'autre projet : SOIT l'id qu'on souhaite définir SOIT la plus proche possible
+				// dans le cas où on aurait supprimé un projet étant placé num. 1 par exemple
+				$otherProject = Project::where('position', '>=', $newPosition)->orderBy('position')->first();
+				$otherProject->position = $currentPosition; // Changer la position de l'autre projet avec l'actuelle de celui qu'on modifie
+				$otherProject->save(); // Enregistrer sa nouvelle pos
+				$project->position = $newPosition; // Définir la nouvelle position du projet qu'on change (anciennement celle de $otherProject)
+			}
+		}
+		
 			/* Remplir la BDD avec le nouveau logo si il a été changé */
 		if(isset($logoFile)){
 			$logoPath = public_path() . '\img';
@@ -100,11 +126,14 @@ class AdminController extends \BaseController {
 		$project = new Project;
 		$logoFile = Input::file('logo');
 
+		$position = Project::max('position') + 1;
+
 			/* Remplir la base de données avec les nouvelles valeurs */
 		$project->title = $request['title'];
 		$project->subtitle = $request['subtitle'];
 		$project->desc = $request['desc'];
 		$project->link = $request['link'];
+		$project->position = $position;
 
 			/* Remplir la BDD avec le nouveau logo si il a été changé */
 		if(isset($logoFile)){

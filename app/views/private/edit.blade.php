@@ -26,7 +26,11 @@
 		{{Form::label('Lien')}}
 		{{Form::text('link')}}
 
+		{{Form::label('Position du projet')}}
+		{{Form::number('position')}}
+
 		{{Form::submit('Envoyer', ['class' => 'button'])}}
+		<a href="{{$project->id}}/delete" class="button alert button-del">Supprimer le projet</a>
 
 	{{Form::close()}}
 </div>
@@ -64,6 +68,5 @@
 @endif
 
 </div>
-
 
 @stop

@@ -16,6 +16,7 @@ Route::get('/contact', 'AppController@contact');
 Route::get('/mentions-legales', 'AppController@mentionsLegales');
 Route::get('/project/{id}', 'AppController@projectJson');
 
+Route::post('/contact', 'MailController@sendMail');
 
 
 	/* ROUTES DU BACK-OFFICE */

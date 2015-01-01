@@ -17,7 +17,7 @@
 
         <div class="large-6 columns medium-7 columns form">
           <h3>{{trans('texts.contact_form')}}</h3>
-            <form method="POST">
+            <form method="POST" action="contact">
               <input type="text" placeholder="{{trans('texts.ph_name')}}" name="name" required/>
               <input type="email" placeholder="{{trans('texts.ph_mail')}}" name="mail" required />
               <input type="text" placeholder="{{trans('texts.ph_object')}}" name="object" required />

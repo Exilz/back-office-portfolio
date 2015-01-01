@@ -64,7 +64,7 @@ App::error(function(Exception $exception, $code)
 
 App::down(function()
 {
-	return Response::make("Be right back!", 503);
+	return Response::make("De retour dans pas longtemps!", 503);
 });
 
 /*
@@ -79,3 +79,17 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Page d'erreur
+|--------------------------------------------------------------------------
+|
+| Rendre une vue personnalisée pour les erreurs 404 notamment
+|
+*/
+
+App::missing(function($exception)
+{
+    return Response::view('public.error', array(), 404);
+});

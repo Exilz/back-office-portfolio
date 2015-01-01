@@ -6,6 +6,7 @@ return array(
 	'title_about' => 'about me',
 	'title_portfolio' => "my work",
 	'title_mentions' => 'legal terms',
+	'title_error' => 'Oh noes :(',
 
 
 		/* ABOUT */
@@ -48,7 +49,11 @@ return array(
 	'mentions1' => "Content publisher and website editor",
 	'mentions2' => "Web hosting",
 	'mentions3' => "Personnal datas",
-	'mentions4' => "I can't translate french laws, but trust me... I'm not stalking you ! :)"
+	'mentions4' => "I can't translate french laws, but trust me... I'm not stalking you ! :)",
 
+		/* ERREUR 404 */
+
+	'error_msg' => "The visited link is probably wrong.",
+	'error_back' => "Beam me up to the homepage, Scotty !"
 
 );

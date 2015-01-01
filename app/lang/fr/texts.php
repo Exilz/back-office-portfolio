@@ -6,6 +6,7 @@ return array(
 	'title_about' => 'à propos',
 	'title_portfolio' => "réalisations",
 	'title_mentions' => 'mentions légales',
+	'title_error' => 'Erreur :(',
 
 
 		/* ABOUT */
@@ -48,7 +49,12 @@ return array(
 	'mentions1' => "Éditeur du site et directeur de publication",
 	'mentions2' => "Prestataire d’hébergement",
 	'mentions3' => "Données personnelles",
-	'mentions4' => "Conformément aux dispositions de la loi n° 78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés, vous disposez d’un droit d’accès, de modification, de rectification et de suppression aux données qui vous concernent."
+	'mentions4' => "Conformément aux dispositions de la loi n° 78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés, vous disposez d’un droit d’accès, de modification, de rectification et de suppression aux données qui vous concernent.",
+
+		/* ERREUR 404 */
+
+	'error_msg' => "Le lien visité est probablement erroné.",
+	'error_back' => "Retour à l'accueil"
 
 
 );

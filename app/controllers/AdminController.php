@@ -134,6 +134,7 @@ class AdminController extends \BaseController {
 		$project->desc = $request['desc'];
 		$project->link = $request['link'];
 		$project->position = $position;
+		$project->save();
 
 			/* Remplir la BDD avec le nouveau logo si il a été changé */
 		if(isset($logoFile)){
@@ -141,9 +142,9 @@ class AdminController extends \BaseController {
 			$logoName = $project->id . '_tb.' . $logoFile->guessClientExtension();
 			$logoFile->move($logoPath, $logoName);
 			$project->logo = $logoName;
+			$project->save();
 		}
 		
-		$project->save();
 
 		Session::flash('flash_msg', "Projet " . $project->title . " ajouté avec succès.");
 		Session::flash('flash_type', "success");	

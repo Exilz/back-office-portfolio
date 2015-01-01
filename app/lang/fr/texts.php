@@ -53,7 +53,7 @@ return array(
 
 		/* ERREUR 404 */
 
-	'error_msg' => "Le lien visité est probablement erroné.",
+	'error_msg' => "Le lien visité est erroné ou la requête n'a pas pu aboutir.",
 	'error_back' => "Retour à l'accueil"
 
 

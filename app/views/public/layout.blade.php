@@ -41,6 +41,15 @@
     </nav>
     </div>
 
+@if(Session::has('flash_msg')))
+  <div class="row">
+      <div data-alert class="alert-box {{Session::get('flash_type')}}">
+      {{Session::get('flash_msg')}}
+      <a href="#" class="close">&times;</a>
+    </div>
+  </div>
+@endif
+
 @yield('content')
 
      <footer>

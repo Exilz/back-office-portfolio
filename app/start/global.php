@@ -48,7 +48,17 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 
 App::error(function(Exception $exception, $code)
 {
-	Log::error($exception);
+
+		/* Affiche le log avec le tracer si on est en mode debug ou bien la page d'erreur en production */
+		
+	if(Config::get('app.debug'))
+	{
+		Log::error($exception);
+	}
+	else
+	{
+		return Response::view('public.error', array(), 404);
+	}
 });
 
 /*

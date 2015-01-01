@@ -13,7 +13,7 @@
     <script src="js/vendor/modernizr.js"></script>
   </head>
   <body>
-    <?php include('public/analyticstracking.php'); ?>
+    <?php include(public_path() . '/analyticstracking.php'); ?>
     <div class="contain-to-grid sticky container-top-bar">
       <nav class="top-bar" data-topbar>
        <ul class="title-area">

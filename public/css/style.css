@@ -2,6 +2,12 @@
 
 .center{text-align: center;}
 .content-clearfix{margin-bottom: 60px;}
+.active-lang a{background: white!important; color: black!important;}
+
+@media screen and (min-width: 580px){
+	.lang-menu{margin-left: 20px!important;}
+}
+
 
 /* TYPEWRITING SCRIPT */
 
@@ -78,6 +84,8 @@
 	background-size: cover;
 }
 .button-works{margin-top: 1.25rem;}
+.button-english{background: rgba(0, 36, 125, 1);}
+.button-english:hover{background: rgba(0, 28, 94, 1);}
 #main-show{margin-top: 3em;}
 #main-presentation{
 	color: white;
@@ -85,6 +93,13 @@
 	text-align: center;
 	text-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
 }
+
+#main-slider li img{
+	max-height: 700px;
+}
+
+#main-slider{ margin-bottom: 10%;}
+
 .main-name{font-size: 50px;}
 .main-job, .about-typed, .works-typed, .contact-typed{
     font-size: 20px; color: white}

@@ -23,14 +23,20 @@
          <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
        </ul>
        <section class="top-bar-section">
-         <ul class="right">
 
-            <li {{ (Request::is('*index') || Request::is('/') ? 'class="active"' : '') }}><a href="/">Home</a></li>
-           <li {{ (Request::is('*about') ? 'class="active"' : '') }}><a href="about">à propos</a></li>
-           <li {{ (Request::is('*portfolio') ? 'class="active"' : '') }}><a href="portfolio">Portfolio</a></li>
-           <li><a href="http://blogwebdev.fr/" target="_blank">Blog</a></li>
-           <li {{ (Request::is('*contact') ? 'class="active"' : '') }}><a href="contact">Contact</a></li>
+         <ul class="left lang-menu">
+           <li {{ (Session::get('locale') == 'fr' ? 'class="active active-lang"' : '') }}><a href="french">Français</a></li>
+           <li {{ (Session::get('locale') == 'en' ? 'class="active active-lang"' : '') }}><a href="english">English</a></li>
          </ul>
+
+         <ul class="right">
+           <li {{ (Request::is('*index') || Request::is('/') ? 'class="active"' : '') }}><a href="/">{{trans('menu.home')}}</a></li>
+           <li {{ (Request::is('*about') ? 'class="active"' : '') }}><a href="about">{{trans('menu.about')}}</a></li>
+           <li {{ (Request::is('*portfolio') ? 'class="active"' : '') }}><a href="portfolio">{{trans('menu.portfolio')}}</a></li>
+           <li><a href="http://blogwebdev.fr/" target="_blank">{{trans('menu.blog')}}</a></li>
+           <li {{ (Request::is('*contact') ? 'class="active"' : '') }}><a href="contact">{{trans('menu.contact')}}</a></li>
+         </ul>
+
        </section>
     </nav>
     </div>
@@ -43,7 +49,7 @@
         <a href="http://twitter.com/eXiilz" title="Twitter" target="_blank"><i class="fa fa-twitter-square logo-footer"></i></a>
         <a href="https://plus.google.com/113320617130370521187?rel=author" target="_blank"><i class="fa fa-google-plus-square logo-footer"></i></a>
       </div>
-      <div class="footer-links">MaximeBertonnier.fr / 2014 / <a href="mentions-legales">Mentions légales</a></div>
+      <div class="footer-links">MaximeBertonnier.fr / 2014 / <a href="mentions-legales">{{trans('menu.mentions')}}</a></div>
 
      </footer>
 
@@ -51,10 +57,28 @@
     <script src="js/vendor/jquery.min.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="js/lib.js"></script>
-    <script src="js/app.js"></script>
+    
+    @if(Session::has('locale') && Session::get('locale') == 'fr')
+      <script src="js/app.js"></script>
+    @endif
+
+    @if(Session::has('locale') && Session::get('locale') == 'en')
+      <script src="js/appEN.js"></script>
+    @endif
+
+    @if(!Session::has('locale'))
+      <script src="js/appEN.js"></script>
+    @endif
+
     <script src="js/folio.js"></script>
     <script>
-      $(document).foundation();
+      $(document).foundation({
+        orbit: {
+          bullets : false,
+          slide_number : false,
+          timer_speed : 6000
+        }
+      });
     </script>
   </body>
 </html>

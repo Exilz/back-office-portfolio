@@ -25,6 +25,7 @@
          <ul class="right">
 
            <li {{ (Request::is('/admin') ? 'class="active"' : '') }}><a href="/admin">Accueil</a></li>
+           <li {{ (Request::is('/slider') ? 'class="active"' : '') }}><a href="/admin/slider">Slider</a></li>
            <li><a href="/">Retour site</a></li>
            @if(Auth::check())
               <li><a href="/admin/logout">Déconnexion</a></li>

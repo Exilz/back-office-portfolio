@@ -13,7 +13,18 @@
 
 App::before(function($request)
 {
-	//
+	/* GESTION DE LA LOCALE */
+		if(Session::has('locale'))
+		{
+			$locale = Session::get('locale');
+			App::setLocale($locale);
+		}
+		else
+		{
+			Session::put('locale', 'fr');
+			App::setLocale('fr');
+		}
+	
 });
 
 

@@ -4,7 +4,8 @@ class AppController extends \BaseController {
 
 	public function index()
 	{
-		Return View::make('public.index');
+		$images = Slider::all();
+		Return View::make('public.index')->with('images', $images);
 	}
 
 	public function about()

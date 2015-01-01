@@ -231,5 +231,65 @@ class AdminController extends \BaseController {
 	}
 
 
+	public function slider()
+	{
+		$images = Slider::all();
+		return View::make('private.slider')->with('images', $images);
+	}
+
+	public function uploadSlider()
+	{
+
+			/* Mise en ligne de l'image */
+		$file = Input::file('file');
+		$fileName = md5(time() + rand(0, 1000)) . '.' . strtolower($file->getClientOriginalExtension());
+		$filePath = public_path() . '/img/slider/';
+		$file->move($filePath, $fileName);
+
+
+			/* Ajout en BDD */
+		$sliderImage = new Slider;
+		$request = Request::all();
+		$sliderImage->alt = "TBD";
+		$sliderImage->src = $fileName;
+		$sliderImage->save();
+
+
+		return Redirect::to(URL::previous());
+	}
+
+	public function updateImageSlider($id)
+	{
+		$image = Slider::find($id);
+		$alt = Request::get('alt');
+		$image->alt = $alt;
+		$image->save();
+
+		Session::flash('flash_msg', "Attribut alt de l'image modifié avec succès.");
+		Session::flash('flash_type', "success");
+
+		return Redirect::to(URL::previous());
+	}
+
+	public function destroySlider($id)
+	{
+		$image = Slider::find($id);
+		$file = public_path() . '/img/slider/' . $image->src;
+		$fileName = $image->src;
+
+		if(is_file($file))
+		{
+			unlink($file);
+		}
+
+		Slider::destroy($id);
+
+		Session::flash('flash_msg', "'$fileName' supprimé avec succès.");
+		Session::flash('flash_type', "warning");	
+
+		return Redirect::to(URL::previous());
+
+	}
+
 
 }

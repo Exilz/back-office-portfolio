@@ -1,5 +1,11 @@
 <?php
 
+	/* CHANGEMENT DE LOCALE */
+
+Route::get('/english', 'LangController@setEnglish');
+Route::get('/french', 'LangController@setFrench');
+
+
 	/* ROUTES DU SITE PUBLIC */
 
 Route::get('/', 'AppController@index');
@@ -15,6 +21,9 @@ Route::get('/project/{id}', 'AppController@projectJson');
 	/* ROUTES DU BACK-OFFICE */
 
 Route::get('/admin', 'AdminController@index')->before('auth');
+
+Route::get('/admin/slider', 'AdminController@slider')->before('auth');
+Route::post('/admin/uploadSlider', 'AdminController@uploadSlider')->before('auth');
 
 Route::post('/admin/uploadImages', 'AdminController@uploadImages')->before('auth');
 Route::get('/admin/removeImage/{id}', 'AdminController@destroyImage')->before('auth');
@@ -33,3 +42,6 @@ Route::post('/admin/add', 'AdminController@store');
 Route::get('/admin/{id}', 'AdminController@edit')->before('auth');
 Route::get('/admin/{id}/delete', 'AdminController@destroy')->before('auth');
 Route::post('/admin/{id}', 'AdminController@update');
+
+Route::get('/admin/deleteSliderImage/{id}', 'AdminController@destroySlider')->before('auth');
+Route::post('/admin/updateSliderImage/{id}', 'AdminController@updateImageSlider')->before('auth');

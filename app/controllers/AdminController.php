@@ -98,7 +98,7 @@ class AdminController extends \BaseController {
 		
 			/* Remplir la BDD avec le nouveau logo si il a été changé */
 		if(isset($logoFile)){
-			$logoPath = public_path() . '\img';
+			$logoPath = public_path() . '/img';
 			$logoName = $project->id . '_tb.' . $logoFile->guessClientExtension();
 			$logoFile->move($logoPath, $logoName);
 			$project->logo = $logoName;
@@ -138,7 +138,7 @@ class AdminController extends \BaseController {
 
 			/* Remplir la BDD avec le nouveau logo si il a été changé */
 		if(isset($logoFile)){
-			$logoPath = public_path() . '\img';
+			$logoPath = public_path() . '/img';
 			$logoName = $project->id . '_tb.' . $logoFile->guessClientExtension();
 			$logoFile->move($logoPath, $logoName);
 			$project->logo = $logoName;
